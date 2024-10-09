@@ -19,10 +19,13 @@ package reflection;
 
 import java.lang.reflect.Method;
 
+import circle.ColoredCircle;
+
 public class Reflection {
 
 	/**
 	 * Print the class corresponding to the object
+	 * 
 	 * @param o the object
 	 */
 	public void correspondingClass(Object o) {
@@ -33,23 +36,36 @@ public class Reflection {
 	}
 
 	/**
-	 * Print the chain of super classes of the object 
+	 * Print the chain of super classes of the object
 	 * Format of the output:
 	 * Inheritance chain:
 	 * Cn inherits from Cn-1 inherits ... inherits from java.lang.Object
+	 * 
 	 * @param o the object
 	 */
 	public void inheritanceChain(Object o) {
 		if (o == null)
 			throw new IllegalArgumentException("Object passesd is null");
 
-		// TODO To complete
+		// To complete
 		// You need to use the EXACT format of the output
 		// Hint: Use the method getSuperClass()
+		System.out.print("Inheritance chain:\n");
+
+		Class obj = o.getClass().getSuperclass();
+		System.out.print(o.getClass().getName());
+
+		while (obj != null) {
+			System.out.print(" inherits from ");
+			System.out.print(obj.getName());
+			obj = obj.getSuperclass();
+		}
+
 	}
-	
+
 	/**
 	 * Print the list of methods of the object
+	 * 
 	 * @param o an object
 	 */
 	public void listMethods(Object o) {
@@ -59,9 +75,13 @@ public class Reflection {
 		Method[] m = o.getClass().getMethods();
 
 		// List of methods
-		// TODO To complete
+		//  To complete
 		// Print each method on one line
 		// Use this EXACT format
+		for (int i = 0; i < m.length; i++) {
+			System.out.println(m[i].getName() + " -> " + m[i].getReturnType());
+		}
+
 		System.out.println("\n");
 	}
 
@@ -73,17 +93,21 @@ public class Reflection {
 
 	/**
 	 * Demonstration
+	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {
 
-		Reflection r = new Reflection();		
-		
+		Reflection r = new Reflection();
+
 		// Demonstration of the methods on an objet of type String
-		// TODO To complete
-		
+		// To complete
+		r.inheritanceChain(new String());
+
 		// Demonstration of the methods on an objet of type ColoredCircle
-		// TODO To complete		
+		//  To complete
+		ColoredCircle circle = new ColoredCircle();
+		r.listMethods(circle);
 	}
 
 }
