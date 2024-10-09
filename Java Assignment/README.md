@@ -1,5 +1,5 @@
 #### Exericse 2
-**Ans**: Memory - Slide 11
+Memory - Slide 11
 
 #### Exercise 4
 - ILOAD: Load int from local variable
