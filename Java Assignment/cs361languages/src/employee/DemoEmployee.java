@@ -23,38 +23,44 @@ public class DemoEmployee {
 
 		PartTimeEmployee pEmp1 = new PartTimeEmployee("Jane", "Smith", "123456777", 17.5);
 
-//		Employee emp2 = new Employee("Don", "Holmes", "123456799");
+		// Employee emp2 = new Employee("Don", "Holmes", "123456799");
 
-//		PartTimeEmployee pEmp2 = new PartTimeEmployee("Melissa", "Will", "123456666", 23.5);
+		// PartTimeEmployee pEmp2 = new PartTimeEmployee("Melissa", "Will", "123456666",
+		// 23.5);
 
 		// Upcasting
 		Employee emp3 = pEmp1;
 		System.out.println("emp3");
 		emp3.whoAmI();
-		// TODO To complete
-		// emp3.whoAmI() // prints ... because ...
-		// emp3.getHourlyRate(); // returns syntax error because ...
+		// To complete
+		// emp3.whoAmI()
+		// prints "EMPLOYEE" because the method emp3 calls only contains
+		// the code "System.out.println("EMPLOYEE");".
 
-		// TODO To complete
+		// emp3.getHourlyRate(); // returns syntax error because it doesn't exist
+		// in the list of methods for Employee
+
+		//  To complete
 		// Add the condition that test that emp3 is an instance of part time employee at
 		// this time
-		// if (CONDITION) {
-		// System.out.println("emp3 instance of part time employee"); // printed
-		// } else {
-		System.out.println("emp3 not instance of part time employee");
-		// }
+		if (emp3 instanceof PartTimeEmployee) {
+			System.out.println("emp3 instance of part time employee"); // printed
+		} else {
+			System.out.println("emp3 not instance of part time employee");
+		}
 
 		// Downcasting 1
-		// TODO Uncomment and run the code
+		//  Uncomment and run the code
 		// PartTimeEmployee pEmp3 = (PartTimeEmployee) emp1;
-		// TODO To complete
-		// This instruction compiles / does not compile
+		//  To complete
+		// This instruction does not compile
 		// This instruction returns a ClassCastException at run time
-		// because ...
+		// 	because Employee class does not implement functions or inherits or 
+		// 	is an instanceof PartTimeEmployee
 
 		// Downcasting 2
 		// Requires the use of intanceof to avoid a run time cast exception
-		// TODO Look at the solution below
+		//  Look at the solution below
 		if (emp3 instanceof PartTimeEmployee) {
 			System.out.println("emp3 instance of part time employee"); // printed
 			PartTimeEmployee pEmp4 = (PartTimeEmployee) emp3; // cast required

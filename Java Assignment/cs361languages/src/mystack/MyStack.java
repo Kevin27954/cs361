@@ -4,7 +4,7 @@
 package mystack;
 
 /**
- * @author ADD YOUR NAME 
+ * @author Kevin Liu
  *
  */
 
@@ -33,29 +33,46 @@ public class MyStack<T> {
 	}
 
 	public T pop() {
-		// TODO To complete
+		if (this.theStack != null) {
+			T val = this.theStack.val;
+			this.theStack = this.theStack.next;
+			return val;
+		}
 		return null;
 	}
 
 	public void push(T v) {
-		// TODO To complete
+		if (this.theStack == null) {
+			this.theStack = new MyNode<T>(v, null);
+			return;
+		}
+
+		MyNode<T> node = new MyNode<T>(v, theStack);
+		this.theStack = node;
 	}
 
-	
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO To complete
+		//  To complete
 		// Create a stack of Integer
 		// Push 1 and 2
 		// Pop
 		// Push 5
-		
-		// TODO To complete
+		MyStack<Integer> intStack = new MyStack<>();
+		intStack.push(1);
+		intStack.push(2);
+		intStack.pop();
+		intStack.push(5);
+
+		//  To complete
 		// Create a stack of Person
 		// Push a person p1 with your name
 		// Push a person p2 with my name
+		MyStack<Person> personStack = new MyStack<>();
+		personStack.push(new Person("Kevin", "Liu"));
+		personStack.push(new Person("Scharff", "Christelle"));
 	}
 
 }
