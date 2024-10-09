@@ -4,11 +4,11 @@
 package circle;
 
 /**
- * @author ADD YOUR NAME
+ * @author Kevin Liu
  *
  */
 
-// TODO Complete the code
+//  Complete the code
 
 public class Circle extends GraphicObject {
 
@@ -54,33 +54,39 @@ public class Circle extends GraphicObject {
 	void moveTo(int newX, int newY) {
 	}
 
-	// TODO To complete
+	// To complete
 	/**
-	 * @return the Circle with this EXACT format Circle: centerX = ... centerY = ... radius = ...
+	 * @return the Circle with this EXACT format Circle: centerX = ... centerY = ...
+	 *         radius = ...
 	 */
 	@Override
 	public String toString() {
-		return super.toString();
+		return "Circle: centerX = " + this.centerX + " centerY = " + this.centerY + " radius = " + this.radius;
 	}
 
-	// TODO To complete
-	// TODO Be sure that you understand the difference between equals and ==
+	// To complete
+	// Be sure that you understand the difference between equals and ==
 	/**
 	 * @return true if this and obj have the same values for
-	 * centerX, centerY and radius
+	 *         centerX, centerY and radius
 	 */
 	@Override
 	public boolean equals(Object obj) {
-		return super.equals(obj);
+		Circle circle = (Circle) obj;
+		return circle.centerX == this.centerX && circle.centerY == this.centerY && circle.radius == this.radius;
 	}
 
-	// TODO To complete
+	//  To complete
 	/**
-	 * @return an exact copy of the Circle that is a new instance 
+	 * @return an exact copy of the Circle that is a new instance
 	 */
-	// @Override
-	// protected Object clone() throws CloneNotSupportedException {
-	// return super.clone();
-	// }
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		Circle circle = new Circle();
+		circle.centerX = this.centerX;
+		circle.centerY = this.centerY;
+		circle.radius = this.radius;
+		return circle;
+	}
 
 }
