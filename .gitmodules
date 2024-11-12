@@ -1,0 +1,3 @@
+[submodule "Java Assignment/cs361-scanner"]
+	path = Java Assignment/cs361-scanner
+	url = https://github.com/kennyl5304/cs361-scanner.git
