@@ -1,7 +1,4 @@
 [submodule "Java Assignment/cs361-scanner"]
 	path = Java Assignment/cs361-scanner
 	url = https://github.com/kennyl5304/cs361-scanner.git
-[submodule "Java Assignment/cs361-github-classroom"]
-	path = Java Assignment/cs361-github-classroom
-	url = https://github.com/paceuniversity/kay-scanner-2024-kennyl5304.git
-	branch = kevin/scanner
+
